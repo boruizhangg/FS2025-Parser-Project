@@ -12,11 +12,12 @@ statement
     ;
 
 assignment
-    :
+    : 
     ;
 
 expression
-    :
+    : expression MULTIPLY expression
+    | expression DIVIDE expression
     ;
 
 
@@ -26,7 +27,8 @@ expression
 
 
 //arithmetic operators
-
+MULTIPLY    :'*';
+DIVIDE      :'/';
 
 //brackets and punctuation
 
