@@ -13,10 +13,12 @@ statement
 
 assignment
     : PLUS_ASSIGN     : '+=' ;
-    : MINUS_ASSIGN    : '-=' ;
+    | MINUS_ASSIGN    : '-=' ;
+    ;
 
 expression
-    :
+    : expression MULTIPLY expression
+    | expression DIVIDE expression
     | expression PLUS expression            // addition
     | expression MINUS expression           // subtraction
     | STRING                                // "john" or 'pork'
@@ -30,6 +32,8 @@ expression
 
 
 //arithmetic operators
+MULTIPLY    :'*';
+DIVIDE      :'/';
 PLUS : "+" ;
 MINUS : "-" ;
 
