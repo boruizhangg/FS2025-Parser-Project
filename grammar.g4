@@ -12,8 +12,8 @@ statement
     ;
 
 assignment
-    :
-    ;
+PLUS_ASSIGN     : '+=' ;
+MINUS_ASSIGN    : '-=' ;
 
 expression
     :
@@ -32,6 +32,10 @@ expression
 
 
 //literals
+ID              : [a-zA-Z_][a-zA-Z_0-9]* ;
 
 
 //whitespace
+// Whitespace
+NEWLINE         : '\r'? '\n' ;
+WS              : [ \t]+ -> skip ;
