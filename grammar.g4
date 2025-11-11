@@ -32,6 +32,10 @@ expression
 
 //assignment operators
 ASSIGNMENT  : '=' ;
+PLUS_ASSIGN : '+=' ;
+MINUS_ASSIGN : '-=' ;
+MULT_ASSIGN : '*=' ;
+DIV_ASSIGN : '/=' ;
 
 //arithmetic operators
 MULTIPLY    :'*';
