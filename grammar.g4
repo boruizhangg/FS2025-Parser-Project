@@ -19,6 +19,10 @@ assignment
 expression
     : expression MULTIPLY expression
     | expression DIVIDE expression
+    | expression PLUS expression            // addition
+    | expression MINUS expression           // subtraction
+    | STRING                                // "john" or 'pork'
+    | BOOLEAN                               // True or False
     ;
 
 
@@ -30,15 +34,22 @@ expression
 //arithmetic operators
 MULTIPLY    :'*';
 DIVIDE      :'/';
+PLUS : "+" ;
+MINUS : "-" ;
+
 
 //brackets and punctuation
 
 
 //literals
-ID              : [a-zA-Z_][a-zA-Z_0-9]* ;
+BOOLEAN : 'True' | 'False' ;
+STRING : '"' (~["\r\n])* '"'       // double-quoted strings
+       | '\'' (~['\r\n])* '\''     // single-quoted strings
+       ;
+ID     : [a-zA-Z_][a-zA-Z_0-9]* ;
 
 
 //whitespace
-// Whitespace
 NEWLINE         : '\r'? '\n' ;
 WS              : [ \t]+ -> skip ;
+
