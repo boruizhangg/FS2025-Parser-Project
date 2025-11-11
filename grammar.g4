@@ -12,7 +12,7 @@ statement
     ;
 
 assignment
-    :
+    : VAR ASSIGNMENT expression NEWLINE     // x = 67
     |
     ;
 
@@ -24,20 +24,21 @@ expression
     | STRING                                // "john" or 'pork'
     | BOOLEAN                               // True or False
     | NUMBER                                // number literal 67
+    | expression MODULO expression           // modulo
     ;
 
 
 //tokens
 
 //assignment operators
-
+ASSIGNMENT  : '=' ;
 
 //arithmetic operators
 MULTIPLY    :'*';
 DIVIDE      :'/';
 PLUS : "+" ;
 MINUS : "-" ;
-
+MODULO  : '%' ;
 
 //brackets and punctuation
 
