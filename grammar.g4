@@ -50,8 +50,8 @@ DIV_ASSIGN : '/=' ;
 //arithmetic operators
 MULTIPLY    :'*';
 DIVIDE      :'/';
-PLUS : "+" ;
-MINUS : "-" ;
+PLUS : '+' ;
+MINUS : '-' ;
 MODULO  : '%' ;
 
 //brackets and punctuation
@@ -74,4 +74,5 @@ NUMBER    : [0-9]+ ('.' [0-9]+)? ;
 //whitespace
 NEWLINE         : '\r'? '\n' ;
 WS              : [ \t]+ -> skip ;
+
 
