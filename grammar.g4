@@ -15,6 +15,8 @@ assignment
     : VAR ASSIGNMENT expression NEWLINE     // x = 67
     | VAR PLUS_ASSIGN expression NEWLINE    // plus assign: x += 5
     | VAR MINUS_ASSIGN expression NEWLINE   // minus assign: x -= 5
+    | VAR MULT_ASSIGN expression NEWLINE     // x *= 5
+    | VAR DIV_ASSIGN expression NEWLINE      // x /= 5
     ;
 
 expression
@@ -26,6 +28,13 @@ expression
     | BOOLEAN                               // True or False
     | NUMBER                                // number literal 67
     | expression MODULO expression           // modulo
+    | VAR 
+    | list
+    ;
+
+list
+    : LBRACKET RBRACKET                                    // empty list []
+    | LBRACKET expression (COMMA expression)* RBRACKET     // [6, 7, 67]
     ;
 
 
@@ -46,6 +55,11 @@ MINUS : "-" ;
 MODULO  : '%' ;
 
 //brackets and punctuation
+LPAREN          : '(' ;
+RPAREN          : ')' ;
+LBRACKET        : '[' ;
+RBRACKET        : ']' ;
+COMMA           : ',' ;
 
 
 //literals
