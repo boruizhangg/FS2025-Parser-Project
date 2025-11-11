@@ -23,6 +23,7 @@ expression
     | expression MINUS expression           // subtraction
     | STRING                                // "john" or 'pork'
     | BOOLEAN                               // True or False
+    | NUMBER                                // number literal 67
     ;
 
 
