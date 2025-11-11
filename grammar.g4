@@ -13,7 +13,8 @@ statement
 
 assignment
     : VAR ASSIGNMENT expression NEWLINE     // x = 67
-    |
+    | VAR PLUS_ASSIGN expression NEWLINE    // plus assign: x += 5
+    | VAR MINUS_ASSIGN expression NEWLINE   // minus assign: x -= 5
     ;
 
 expression
