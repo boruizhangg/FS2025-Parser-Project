@@ -12,8 +12,8 @@ statement
     ;
 
 assignment
-    : PLUS_ASSIGN     : '+=' ;
-    | MINUS_ASSIGN    : '-=' ;
+    :
+    |
     ;
 
 expression
@@ -47,7 +47,8 @@ BOOLEAN : 'True' | 'False' ;
 STRING : '"' (~["\r\n])* '"'       // double-quoted strings
        | '\'' (~['\r\n])* '\''     // single-quoted strings
        ;
-ID     : [a-zA-Z_][a-zA-Z_0-9]* ;
+VAR     : [a-zA-Z_][a-zA-Z_0-9]* ;
+NUMBER    : [0-9]+ ('.' [0-9]+)? ;
 
 
 //whitespace
