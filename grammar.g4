@@ -60,3 +60,4 @@ NUMBER    : [0-9]+ ('.' [0-9]+)? ;
 //whitespace
 NEWLINE         : '\r'? '\n' ;
 WS              : [ \t]+ -> skip ;
+
