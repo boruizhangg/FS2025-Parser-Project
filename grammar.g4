@@ -54,6 +54,12 @@ PLUS : '+' ;
 MINUS : '-' ;
 MODULO  : '%' ;
 
+// comparison operators
+LTE : '<=' ;
+GTE : '>=' ;
+LT : '<' ;
+GT : '>' ;
+
 //brackets and punctuation
 LPAREN          : '(' ;
 RPAREN          : ')' ;
