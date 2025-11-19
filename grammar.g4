@@ -25,6 +25,13 @@ expression
     | BOOLEAN                               // True or False
     | NUMBER                                // number literal 67
     | expression MODULO expression           // modulo
+    | VAR 
+    | list
+    ;
+
+list
+    : LBRACKET RBRACKET                                    // empty list []
+    | LBRACKET expression (COMMA expression)* RBRACKET     // [6, 7, 67]
     ;
 
 
@@ -43,6 +50,12 @@ DIVIDE      :'/';
 PLUS : "+" ;
 MINUS : "-" ;
 MODULO  : '%' ;
+
+// comparison operators
+LTE : '<=' ;
+GTE : '>=' ;
+LT : '<' ;
+GT : '>' ;
 
 //brackets and punctuation
 
