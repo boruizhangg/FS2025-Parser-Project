@@ -24,6 +24,8 @@ expression
     | expression DIVIDE expression
     | expression PLUS expression            // addition
     | expression MINUS expression           // subtraction
+    | expression AND expression             // logic and
+    | expression OR expression              // logic or
     | STRING                                // "john" or 'pork'
     | BOOLEAN                               // True or False
     | NUMBER                                // number literal 67
@@ -59,6 +61,10 @@ LTE : '<=' ;
 GTE : '>=' ;
 LT : '<' ;
 GT : '>' ;
+
+//logical operators
+AND     : 'and' ;
+OR      : 'or' ;
 
 //brackets and punctuation
 LPAREN          : '(' ;
