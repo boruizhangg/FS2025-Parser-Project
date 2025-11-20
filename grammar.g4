@@ -21,22 +21,26 @@ assignment
     ;
 
 expression
-    : expression MULTIPLY expression
-    : NOT expression                        //logical not
+    : NOT expression                        // logical not (FIXED - was : instead of |)
+    | expression MULTIPLY expression
     | expression DIVIDE expression
+    | expression MODULO expression          // modulo
     | expression PLUS expression            // addition
     | expression MINUS expression           // subtraction
-    | expression AND expression             // logic and
-    | expression OR expression              // logic or
+    | expression LT expression              // less than < 
+    | expression LTE expression             // less than or equal <= 
+    | expression GT expression              // greater than > 
+    | expression GTE expression             // greater than or equal >= 
     | expression EQ expression              // equality == 
     | expression NEQ expression             // not equal != 
+    | expression AND expression             // logic and
+    | expression OR expression              // logic or
+    | LPAREN expression RPAREN              // parentheses 
     | STRING                                // "john" or 'pork'
     | BOOLEAN                               // True or False
     | NUMBER                                // number literal 67
-    | expression MODULO expression           // modulo
     | VAR 
     | list
-    
     ;
 
 list
@@ -51,7 +55,7 @@ if_statement
       (ELIF expression COLON NEWLINE
        NEWLINE? statement)*
       (ELSE COLON NEWLINE
-       NEWLINE? statement+)?
+       NEWLINE? statement)?
     ;
 
 //tokens
