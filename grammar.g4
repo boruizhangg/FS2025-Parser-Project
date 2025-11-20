@@ -21,7 +21,8 @@ assignment
     ;
 
 expression
-    : NOT expression                        // logical not (FIXED - was : instead of |)
+    : NOT expression                        // logical not 
+    | MINUS expression   
     | expression MULTIPLY expression
     | expression DIVIDE expression
     | expression MODULO expression          // modulo
@@ -51,11 +52,11 @@ list
 //if/elif statement stuff
 if_statement
     : IF expression COLON NEWLINE
-      NEWLINE? statement
+      NEWLINE? statement+
       (ELIF expression COLON NEWLINE
-       NEWLINE? statement)*
+       NEWLINE? statement+)*
       (ELSE COLON NEWLINE
-       NEWLINE? statement)?
+       NEWLINE? statement+)?
     ;
 
 //tokens
