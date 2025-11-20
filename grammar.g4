@@ -27,12 +27,15 @@ expression
     | expression MINUS expression           // subtraction
     | expression AND expression             // logic and
     | expression OR expression              // logic or
+    | expression EQ expression              // equality == 
+    | expression NEQ expression             // not equal != 
     | STRING                                // "john" or 'pork'
     | BOOLEAN                               // True or False
     | NUMBER                                // number literal 67
     | expression MODULO expression           // modulo
     | VAR 
     | list
+    
     ;
 
 list
@@ -69,6 +72,8 @@ LTE : '<=' ;
 GTE : '>=' ;
 LT : '<' ;
 GT : '>' ;
+EQ  : '==' ;   
+NEQ : '!=' ;   
 
 //logical operators
 AND     : 'and' ;
