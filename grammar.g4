@@ -22,6 +22,7 @@ assignment
 
 expression
     : expression MULTIPLY expression
+    : NOT expression                        //logical not
     | expression DIVIDE expression
     | expression PLUS expression            // addition
     | expression MINUS expression           // subtraction
@@ -49,6 +50,8 @@ if_statement
       NEWLINE? statement
       (ELIF expression COLON NEWLINE
        NEWLINE? statement)*
+      (ELSE COLON NEWLINE
+       NEWLINE? statement+)?
     ;
 
 //tokens
@@ -78,10 +81,12 @@ NEQ : '!=' ;
 //logical operators
 AND     : 'and' ;
 OR      : 'or' ;
+NOT     : 'not' ;
 
 //if/elif/;
 IF      : 'if' ;
 ELIF    : 'elif' ;
+ELSE    : 'else' ;
 COLON   : ':' ;
 
 
