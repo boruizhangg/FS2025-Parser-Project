@@ -8,6 +8,7 @@ program
 statement
     : assignment
     | expression NEWLINE
+    | if_statement  //To allow for the if/elif statement
     | NEWLINE
     ;
 
@@ -39,6 +40,13 @@ list
     | LBRACKET expression (COMMA expression)* RBRACKET     // [6, 7, 67]
     ;
 
+//if/elif statement stuff
+if_statement
+    : IF expression COLON NEWLINE
+      NEWLINE? statement
+      (ELIF expression COLON NEWLINE
+       NEWLINE? statement)*
+    ;
 
 //tokens
 
@@ -65,6 +73,12 @@ GT : '>' ;
 //logical operators
 AND     : 'and' ;
 OR      : 'or' ;
+
+//if/elif/;
+IF      : 'if' ;
+ELIF    : 'elif' ;
+COLON   : ':' ;
+
 
 //brackets and punctuation
 LPAREN          : '(' ;
