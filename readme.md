@@ -36,7 +36,7 @@ This is **not** a full Python parser — it only supports the features required 
 - **Borui Zhang** 
 - **Gabe Edwards**  
 - **Dhruv Bhakta**
-- **Stattius**
+- **Blade Hagman**
 
 ---
 
@@ -69,10 +69,34 @@ Install the ANTLR runtime for Python
 pip install antlr4-python3-runtime
 ```
 
+---
 
+### **4. ANTLR Tool (antlr-4.13.1-complete.jar)**
+Install the ANTLR runtime for Python:
+```bash
+pip install antlr4-python3-runtime
+```
 
+---
 
+### **5. Generate the Parser Files**
+Open the terminal inside your ANTLR folder and run:
+```bash
+java -jar antlr-4.13.1-complete.jar -Dlanguage=Python3 python.g4 -o parser
+```
+This will create a new parser folder containing the generated Python files.
+The imporant generted files are: 
+- pythonLexer.py - This turns the input code into tokens
+- pythonParser.py - This builds a parse tree
 
+---
+
+### **6. Running the Parser**
+Before running the parser, you have to make sure that the test file is in the same same folder.
+Oncethe parser files have been generated you can test any python file by running:
+```bush
+python main.py (test file name).py
+```
 
 
 
