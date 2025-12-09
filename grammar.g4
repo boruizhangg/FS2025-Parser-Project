@@ -1,4 +1,4 @@
-    grammar python;
+grammar python;
 
 // Parser Rules
 program
@@ -9,6 +9,7 @@ statement
     : assignment
     | expression NEWLINE
     | if_statement  //To allow for the if/elif statement
+    | while_statement  //To allow for while loops
     | NEWLINE
     ;
 
@@ -59,6 +60,12 @@ if_statement
        NEWLINE? statement+)?
     ;
 
+//while loop
+while_statement
+    : WHILE expression COLON NEWLINE
+      NEWLINE? statement+
+    ;
+
 //tokens
 
 //assignment operators
@@ -88,11 +95,14 @@ AND     : 'and' ;
 OR      : 'or' ;
 NOT     : 'not' ;
 
-//if/elif/;
+//if/elif/else
 IF      : 'if' ;
 ELIF    : 'elif' ;
 ELSE    : 'else' ;
 COLON   : ':' ;
+
+//while loop
+WHILE   : 'while' ;
 
 
 //brackets and punctuation
