@@ -64,6 +64,7 @@ https://adoptium.net/
 ---
 
 ### **3. Install Python ANTLR Runtime**  
+Before generating all of the needed files, make sure you have downloaded the Python.g4 file and have placed it a folder that will contain all the ANTLR files
 Install the ANTLR runtime for Python
 ```bash
 pip install antlr4-python3-runtime
@@ -97,7 +98,6 @@ Oncethe parser files have been generated you can test any python file by running
 ```bush
 python main.py (test file name).py
 ```
-
 
 
 
