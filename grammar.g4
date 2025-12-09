@@ -122,7 +122,7 @@ WHILE   : 'while' ;
 //for loop
 FOR     : 'for' ;
 
-special token for 'range' so we can spot " for i in range(...)" blah blah
+//special token for 'range' so we can spot " for i in range(...)" blah blah
 RANGE   : 'range' ;
 
 //brackets and punctuation
@@ -160,3 +160,4 @@ NUMBER  : [0-9]+ ('.' [0-9]+)? ;
 //whitespace
 NEWLINE         : '\r'? '\n' ;
 WS              : [ \t]+ -> skip ;
+
