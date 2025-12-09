@@ -10,6 +10,7 @@ statement
     | expression NEWLINE
     | if_statement  //To allow for the if/elif statement
     | while_statement  //To allow for while loops
+    | for_statement //allows for loops
     | NEWLINE
     ;
 
@@ -66,6 +67,12 @@ while_statement
       NEWLINE? statement+
     ;
 
+//for loop
+for_statement
+    : FOR VAR IN expression COLON NEWLINE
+      NEWLINE? statement+
+    ;
+
 //tokens
 
 //assignment operators
@@ -97,6 +104,7 @@ NOT     : 'not' ;
 
 //if/elif/else
 IF      : 'if' ;
+IN      : 'in' ;
 ELIF    : 'elif' ;
 ELSE    : 'else' ;
 COLON   : ':' ;
@@ -104,6 +112,8 @@ COLON   : ':' ;
 //while loop
 WHILE   : 'while' ;
 
+//for loop
+FOR     : 'for' ;
 
 //brackets and punctuation
 LPAREN          : '(' ;
