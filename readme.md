@@ -74,9 +74,8 @@ pip install antlr4-python3-runtime
 
 ### **4. ANTLR Tool (antlr-4.13.1-complete.jar)**
 Install the ANTLR runtime for Python:
-```bash
-pip install antlr4-python3-runtime
-```
+
+https://www.antlr.org/download.html
 
 ---
 
